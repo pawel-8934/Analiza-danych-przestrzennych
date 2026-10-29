@@ -1,0 +1,25 @@
+Program Copernicus - obliczanie NDVI
+
+
+Normalized Differenced Vegetation Index - wskaźnik wegetacyjny pozwalający na określanie poziomu vegetacyjnego na wybranym obszarze. Więcej: https://www.earthdata.nasa.gov/topics/land-surface/normalized-difference-vegetation-index-ndvi .
+Pobieranie danych 
+
+    Wejdź na https://browser.dataspace.copernicus.eu/
+    Zarejestruj się i zaloguj
+    Wybierz obszar danych do pobrania, tzn. wybierz obszar zainteresowania, wyszukaj obraz korzystając z "Show latest date", a następnie kliknij w ikonę pobierania danych
+    Podczas pobierania skorzystaj z zakładki Analytical, by pobrać odpowiednie warstwy (B04, B08)
+
+
+
+Przed pobraniem danych pamiętaj o wybraniu odpowiedniego formatu (TIFF (32-bit float)), rozdzielczości i oznacz interesujące Cię warstwy (min. B04, B08) służące do obliczenia indeksu.
+
+
+QGIS - obliczanie NDVI
+
+    Zainstaluj i uruchom program QGIS (https://qgis.org/).
+    Utwórz nowy projekt
+    Dodaj mapę podkładową, np. Google Maps (https://hatarilabs.com/ih-en/how-to-add-a-google-map-in-qgis-3-tutorial)
+    Załaduj warstwy B04 i B08 do QGISa - zmień nazwy tak, aby na kolejnym etapie było łatwiej
+    Z górnego Menu wybierz Raster > Raster Calculator... a następnie wprowadź formułę wskaźnika
+    NDVI = (NIR - RED) / (NIR + RED)
+    Wejdź w właściwości warstwy i wybierze odpowiednią mapę kolorystyczną (Symbology > Singleband pseudocolor)
